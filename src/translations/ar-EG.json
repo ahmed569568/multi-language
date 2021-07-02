@@ -1,0 +1,16 @@
+{
+  "APP_NAME": "الغه",
+  "About": "العنوان",
+  "Hello world !": "اهلا بالعالم !",
+  "Home": "الرئسيه",
+  "Logged in as": "دخول",
+  "Login": "دخول",
+  "Logout": "حروج",
+  "Password": "الرقم السري",
+  "Password is required": "الرقم السري مطلوب",
+  "Username": "الاسم",
+  "Username is required": "الاسم مطلوب",
+  "Username or password incorrect.": "الاسم او الرقم السري.",
+  "Remember me": "تذكرني",
+  "Version": "الاصدار"
+}

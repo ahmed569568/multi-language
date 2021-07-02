@@ -1,0 +1,72 @@
+<main class="form-signin">
+  <form #f="ngForm" (ngSubmit)="signUp(f)">
+    <img class="mb-4" src="../../../../assets/ngx-rocket-logo.png" alt="" width="72" height="57" />
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <input type="name" class="form-control mb-2" #name="ngModel" name="name" ngModel placeholder="Name" required />
+    <div class="alert alert-danger" *ngIf="name.invalid && name.touched">name is required</div>
+    <input
+      type="email"
+      class="form-control mb-2"
+      #email="ngModel"
+      name="email"
+      ngModel
+      placeholder="Email"
+      required
+      email
+    />
+    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">email is required</div>
+    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">
+      your input doesn't match email format
+    </div>
+
+    <input
+      type="password"
+      class="form-control mb-2"
+      #password="ngModel"
+      name="password"
+      ngModel
+      placeholder="Password"
+      required
+      minlength="6"
+    />
+    <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">password is required</div>
+    <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">
+      password should be 6+ charachters
+    </div>
+
+    <input
+      type="password"
+      class="form-control mb-2"
+      #passwordConfirm="ngModel"
+      #passwordConfirm="ngModel"
+      name="passwordConfirm"
+      ngModel
+      placeholder="Confirm Password"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="passwordConfirm.value != password.value && passwordConfirm.touched">
+      confirm password not equel
+    </div>
+
+    <input
+      type="text"
+      class="form-control mb-2"
+      #address="ngModel"
+      name="address"
+      ngModel
+      placeholder="Address"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="address.invalid && address.touched">address is required</div>
+
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      type="submit"
+      [disabled]="f.invalid || passwordConfirm.value != password.value"
+    >
+      Sign in
+    </button>
+    <a class="m-2" routerLink="/login">login</a>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+  </form>
+</main>
